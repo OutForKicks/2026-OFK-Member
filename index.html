@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OFK Digital Member Card</title>
+  <meta name="description" content="OFK digital membership card" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section id="app-view" class="screen">
+      <div class="form-card">
+        <div class="logo-wrap" id="brandLogoMain">
+           <img src="OFK.png" alt="OFK Logo">
+        </div>
+
+        <p class="eyebrow">Out For Kicks</p>
+        <h1 class="title">Digital Member Card</h1>
+        <p class="subtitle">Enter your details below to generate your 2026 OFK membership card.</p>
+
+        <div class="input-group">
+          <label for="firstNameInput">First Name</label>
+          <input id="firstNameInput" type="text" placeholder="First name" autocomplete="given-name" />
+        </div>
+
+        <div class="input-group">
+          <label for="surnameInput">Surname</label>
+          <input id="surnameInput" type="text" placeholder="Surname" autocomplete="family-name" />
+        </div>
+
+        <div class="input-group">
+          <label for="teamNameInput">Team Name</label>
+          <select id="teamNameInput">
+            <option value="">Select your team</option>
+            <option value="Forza">Forza</option>
+            <option value="Solve">Solve</option>
+            <option value="Numbers">Numbers</option>
+            <option value="Junction">Junction</option>
+            <option value="Pumpjack">Pumpjack</option>
+            <option value="Fanny Bay Oyster">Fanny Bay Oyster</option>
+            <option value="Prince of Whales">Prince of Whales</option>
+            <option value="Shinden">Shinden</option>
+            <option value="Vancity">Vancity</option>
+            <option value="QMUNITY">QMUNITY</option>
+            <option value="EY">EY</option>
+            <option value="Fountainhead">Fountainhead</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <button class="btn btn-primary" id="generateBtn" type="button">Generate Card</button>
+          <button class="btn btn-secondary" id="resetBtn" type="button">Reset</button>
+          <button class="btn btn-secondary" id="discountsBtn" type="button">
+          View Discounts
+          </button>
+        </div>
+
+        <div id="statusMessage" class="status"></div>
+      </div>
+
+      <section class="member-card hidden" id="memberCard">
+        <div class="member-card-header">
+          <div>
+            <div class="chip">2026 Season</div>
+            <h2 class="member-name" id="memberName">First Last</h2>
+            <p class="member-subtitle">2026 Season OFK Member</p>
+          </div>
+        </div>
+
+        <div class="qr-box">
+          <div id="qrcode"></div>
+        </div>
+
+        <div class="member-meta">
+          <div>
+            <div class="meta-label">Team</div>
+            <div class="meta-value" id="memberTeam">Team Name</div>
+          </div>
+
+          <a id="previewLink" class="btn btn-secondary preview-btn" href="#" target="_blank" rel="noopener noreferrer">
+            Open Verification Page
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <section id="verify-view" class="screen hidden verify-screen">
+      <div class="verify-card">
+        <div class="verify-logo" id="brandLogoVerify">
+           <img src="OFK.png" alt="OFK Logo">
+        </div>
+
+        <p class="eyebrow">Out For Kicks</p>
+        <h2 class="verify-name" id="verifyName">Member Name</h2>
+        <p class="verify-membership" id="verifyMembershipText">2026 Season OFK Member</p>
+        <div class="verified-badge" id="verifyBadge">Verified member</div>
+        <p class="verify-note" id="verifyNote">This page is shown when a sponsor scans the QR code.</p>
+      </div>
+    </section>
+  </main>
+<div id="discountModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>OFK Member Discounts</h2>
+
+    <ul class="discount-list">
+      <li><strong>Pumpjack Pub</strong> – Complimentary Cover for "Fresh Meat" Thursday's</li>
+      <li><strong>Junction</strong> – 10% Off Food</li>
+      <li><strong>Fountainhead</strong> – 10% Off Food</li>
+      <li><strong>Forza Physio</strong> – 15% Off Initial Appointment</li>
+      <li><strong>Fanny Bay Oyster</strong> – 10% Off Food</li>
+      <li><strong>Soccer West</strong> – 10% Off Footwear</li>
+      <li><strong>MASC</strong> – 10% Off Full-Priced Items</li>
+    </ul>
+
+    <button class="btn btn-primary" id="closeDiscounts">Close</button>
+  </div>
+</div>
+  <script src="js/members.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
