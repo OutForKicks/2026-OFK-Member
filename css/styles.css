@@ -397,9 +397,12 @@ select:focus {
   color: #0a1a63;
   padding: 24px;
   border-radius: 16px;
-  max-width: 400px;
+  max-width: 420px;
   width: 90%;
-  text-align: left;
+
+  /* 🔥 NEW */
+  max-height: 80vh;      /* limits height on mobile */
+  overflow-y: auto;      /* enables scrolling */
 }
 
 /* Discount list */
@@ -411,3 +414,10 @@ select:focus {
 .discount-list li {
   margin-bottom: 8px;
 }
+
+.discount-note {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #153781;
+}
+
