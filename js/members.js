@@ -289,3 +289,5 @@ const MEMBERS = [
 { firstName: "Zach", surname: "Nagel", teamName: "EY" },
 { firstName: "Zika", surname: "Trajkovic", teamName: "Fountainhead" }
 ];
+
+window.MEMBERS = MEMBERS;
